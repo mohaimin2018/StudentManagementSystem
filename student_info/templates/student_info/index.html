@@ -4,7 +4,7 @@
 <h3 class="m-4">All Students</h3>
 <div class="row">
   <div class="col-12">
-    {% if students %}
+    {% if student_info %}
     <div class="card bg-light ms-4 me-4 mb-4">
       <div class="card-header">
         <i class="fa-solid fa-list fa-lg"></i> Student Records
@@ -25,7 +25,7 @@
                 </tr>
               </thead>
               <tbody>
-                {% for student in students %}
+                {% for student in student_info %}
                   <tr>
                     <td>{{ student.student_number }}</td>
                     <td>{{ student.first_name }}</td>
