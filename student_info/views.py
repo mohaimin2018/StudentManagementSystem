@@ -7,7 +7,7 @@ from .forms import StudentForm
 
 # Create your views here.
 def index(request):
-  return render(request, 'student_info/index.html', {
+  return render(request, 'students/index.html', {
     'students': Student.objects.all()
   })
 
@@ -51,14 +51,14 @@ def edit(request, id):
     form = StudentForm(request.POST, instance=student)
     if form.is_valid():
       form.save()
-      return render(request, 'student_info/edit.html', {
+      return render(request, 'students/edit.html', {
         'form': form,
         'success': True
       })
   else:
     student = Student.objects.get(pk=id)
     form = StudentForm(instance=student)
-  return render(request, 'student_info/edit.html', {
+  return render(request, 'students/edit.html', {
     'form': form
   })
 
